@@ -23,7 +23,7 @@ def task1():
     eps = float(input("Enter accuracy: "))
     N = int(input("Enter number of terms: "))
     if a + x == 0:
-        print("Помилка: a + x не може дорівнювати 0!")
+        print("Error: a + x must not be 0!")
         return 
     s1 = calculate_sum(N, x, a)
     N *= 2
@@ -33,9 +33,9 @@ def task1():
         N *= 2
         s2 = calculate_sum(N, x, a) 
     if abs(s2 - s1) <= eps:
-        print(f"Успішно досягнуто точність!")
+        print(f"Success: Accuracy achieved!")
     else:
-        print(f"Увага: досягнуто ліміт ітерацій (N >= 10000), задану точність може бути не досягнуто.")
+        print(f"Warning: Maximum iterations reached (N >= 10000), desired accuracy may not be achieved.")
     print(f"Result: {s2}, Number of terms: {N}")
 
 # 2 Завдання      
@@ -50,7 +50,7 @@ def task2():
             break
         a_0 = a_curr
     else:
-        print("Did not converge within 100 iterations.")
+        print("Did not converge within 100 iterations")
 
 # 3 Завдання
 def clean_text(text):
