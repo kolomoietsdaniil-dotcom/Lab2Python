@@ -9,10 +9,7 @@ def fact(n):
         return n * fact(n-1)
     
 def term(k,x,a):
-    if a+x == 0 and k > 0:
-        print("Error: Division by zero")
-    result = pow(a+x, -k) / (pow(a, 2*k+1) + fact(k**2))
-    return result
+        return pow(a+x, -k) / (pow(a, 2*k+1) + fact(k**2))
 
 def calculate_sum(M, x, a):
     total_sum = 0
@@ -25,13 +22,20 @@ def task1():
     x = float(input("Enter x: "))
     eps = float(input("Enter accuracy: "))
     N = int(input("Enter number of terms: "))
+    if a + x == 0:
+        print("Помилка: a + x не може дорівнювати 0!")
+        return 
     s1 = calculate_sum(N, x, a)
     N *= 2
     s2 = calculate_sum(N, x, a)
-    while abs(s2-s1) > eps:
+    while abs(s2-s1) > eps and N < 10000:
         s1 = s2
         N *= 2
         s2 = calculate_sum(N, x, a) 
+    if abs(s2 - s1) <= eps:
+        print(f"Успішно досягнуто точність!")
+    else:
+        print(f"Увага: досягнуто ліміт ітерацій (N >= 10000), задану точність може бути не досягнуто.")
     print(f"Result: {s2}, Number of terms: {N}")
 
 # 2 Завдання      
