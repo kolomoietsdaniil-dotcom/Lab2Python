@@ -30,7 +30,7 @@ def task1():
     if eps <= 0:
         print("Помилка: Точність повинна бути більшою за 0!")
         return
-    print("N must be between 1 and 6")
+    print("N повинно бути між 1 та 6")
     N = int(input("Введіть кількість доданків: "))
     if N < 1 or N > 6:
         print("Помилка: N повинно бути між 1 і 6!")
